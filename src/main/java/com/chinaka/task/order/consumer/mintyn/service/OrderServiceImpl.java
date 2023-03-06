@@ -38,8 +38,6 @@ public class OrderServiceImpl implements OrderService{
 
     private final OrderRepository orderRepository;
     private final ResponseHelper responseHelper;
-    private final ProductRepository productRepository;
-
     private final Utility utility;
 
     @Value("${topic.name.producer}")

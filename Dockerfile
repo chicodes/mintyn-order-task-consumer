@@ -22,8 +22,8 @@ WORKDIR /app
 
 # COPY config/configs-dev.properties config/
 
-COPY --from=build /app/target/a2x-excercise-0.0.1.jar a2x-excercise-0.0.1.jar
+COPY --from=build /app/target/mintyn-consumer-0.0.1.jar mintyn-consumer-0.0.1.jar
 
-EXPOSE 1800
+EXPOSE 1837
 
-ENTRYPOINT ["java","-jar","a2x-excercise-0.0.1.jar"]
+ENTRYPOINT ["java","-jar","mintyn-consumer-0.0.1.jar"]

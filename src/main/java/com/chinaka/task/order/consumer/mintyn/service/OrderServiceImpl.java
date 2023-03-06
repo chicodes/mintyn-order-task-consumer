@@ -58,7 +58,6 @@ public class OrderServiceImpl implements OrderService{
             if(Objects.isNull(getOrder))
                 throw new ProductExistException("Order Not found");
 
-            //BigDecimal total = getOrder.getPrice().multiply(new BigDecimal(getOrder.getQuantity()));
             BigDecimal total = BigDecimal.valueOf(Long.parseLong(getOrder.getPrice())).multiply(BigDecimal.valueOf(Long.parseLong(getOrder.getQuantity())));
             Order order = new Order();
             log.info("setting order values");
@@ -88,7 +87,6 @@ public class OrderServiceImpl implements OrderService{
             log.info("getting order with Id {}", id);
             Order result = orderRepository.findOrderById(Long.valueOf(id));
             if(Objects.isNull(result)){
-                //throw new OrderExistException("Order Not Found", HttpStatus.EXPECTATION_FAILED.toString());
                 return responseHelper.getResponse(ORDER_NOT_FOUND_CODE, ORDER_NOT_FOUND, null, HttpStatus.EXPECTATION_FAILED);
 
             }
@@ -124,7 +122,7 @@ public class OrderServiceImpl implements OrderService{
                 result = orderRepository.findAll(paging);
             }
             log.info("{}", result);
-            if (result.isEmpty()) {
+            if (result.getTotalElements() < 1 ) {
                 return responseHelper.getResponse(NOT_FOUND_CODE, ORDER_NOT_FOUND, null, HttpStatus.EXPECTATION_FAILED);
             }
             return responseHelper.getResponse(SUCCESS_CODE, SUCCESS, result, HttpStatus.OK);

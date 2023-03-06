@@ -8,11 +8,11 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.chinaka.task.order.consumer.mintyn</groupId>
-	<artifactId>mintyn-order-consumer-task</artifactId>
+	<groupId>mintyn-consumer</groupId>
+	<artifactId>mintyn-consumer</artifactId>
 	<version>0.0.1</version>
-	<name>Mintyn order consumer Task</name>
-	<description>Mintyn order consumer Task</description>
+	<name>mintyn-consumer</name>
+	<description>mintyn-consumer</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
